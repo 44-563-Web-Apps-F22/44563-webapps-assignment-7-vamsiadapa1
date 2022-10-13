@@ -42,10 +42,11 @@
     
     <script>
         function startTime() {
-            for (let i = 0; i < 4; i++) {
+            let countdown = Math.floor(Math.random() * 9) + 2
+            for (let i = 0; i < countdown; i++) {
                 setTimeout(() => {
                     document.getElementById("countdown").innerHTML = i
-                }, ((3 - i) * 1000));
+                }, ((countdown - i) * 1000));
             }
             setTimeout(() => {
                 if (myTime == undefined) {
@@ -54,7 +55,7 @@
                     let buttonTime = Date.now()
                     document.getElementById("target").innerHTML = "Time was " + (buttonTime - myTime)
                 }
-            }, 3000);
+            }, (countdown - i) * 1000);
         }
     </script>
 </body>
